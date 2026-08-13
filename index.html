@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="观音灵签 Avalokita Oracle — 在线求签，100签全收录，签诗解曰典故，安心寄语，行动建议。免费离线，中英双语，单文件即用。">
+<meta name="keywords" content="观音灵签,求签,抽签,观音签,解签,在线求签,免费,灵签">
+<meta property="og:title" content="观音灵签 · Avalokita Oracle">
+<meta property="og:description" content="求一份心安 · 观音灵签100签 · 签诗解曰典故 · 中英双语">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0d0d1a">
+<title>观音灵签 · Avalokita Oracle</title>
+<style>
+:root{--bg:#0d0d1a;--card:#13132b;--bdr:#1e3799;--accent:#4a69bd;--gold:#ffd700;--text:#c8d6e5;--dim:#7f8fa6;--m:#4CAF50;--f:#F44336;--e:#FF9800;--inp:#0c0c22;--inpText:#f1f2f6;--mutedBdr:#2a2a4a;--foot:#576574;--grid:rgba(30,55,153,0.06);--inset:rgba(0,0,0,0.3)}
+html[data-theme="light"]{--bg:#f2e6cd;--card:#faf0dc;--bdr:#b8914f;--accent:#8a6a35;--gold:#7a5c1e;--text:#3e2f1d;--dim:#7d6a4d;--inp:#f7ecd6;--inpText:#3e2f1d;--mutedBdr:#d8c39a;--foot:#a08a63;--grid:rgba(138,106,53,0.08);--inset:rgba(90,60,30,0.05)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'Courier New','Microsoft YaHei',monospace;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:16px 12px 40px;background-image:repeating-linear-gradient(0deg,transparent,transparent 31px,var(--grid) 31px,var(--grid) 32px),repeating-linear-gradient(90deg,transparent,transparent 31px,var(--grid) 31px,var(--grid) 32px)}
+.hdr{text-align:center;margin:12px 0 16px}
+.hdr h1{font-size:24px;color:var(--gold);letter-spacing:5px;text-shadow:0 0 24px rgba(255,215,0,0.25)}
+.hdr .sub{color:var(--dim);font-size:12px;margin-top:3px;letter-spacing:2px}
+.menu-bar{display:flex;justify-content:center;gap:16px;margin:0 0 12px;flex-wrap:wrap;align-items:center}
+.menu-bar a{color:var(--dim);font-size:13px;cursor:pointer;letter-spacing:2px;text-decoration:none;border-bottom:1px solid transparent;transition:all 0.2s}
+.menu-bar a:hover{color:var(--gold);border-color:var(--accent)}
+.card{background:var(--card);border:3px solid var(--bdr);padding:20px 24px 24px;max-width:560px;width:100%;position:relative;box-shadow:0 0 40px rgba(74,105,189,0.2),inset 0 0 60px var(--inset);margin-bottom:16px}
+.card::before{content:'';position:absolute;top:-3px;left:-3px;right:-3px;bottom:-3px;border:1px solid var(--accent);pointer-events:none}
+.card::after{content:'';position:absolute;top:6px;left:6px;right:6px;bottom:6px;border:1px solid rgba(74,105,189,0.2);pointer-events:none}
+input,textarea{width:100%;padding:10px 12px;background:var(--inp);color:var(--inpText);border:2px solid var(--bdr);font-size:14px;font-family:inherit;outline:none;resize:none;transition:border-color 0.2s}
+input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 8px rgba(74,105,189,0.3)}
+.btn{width:100%;padding:13px;margin-top:10px;background:linear-gradient(180deg,#2c3e80,#1e2d6a);color:var(--gold);border:2px solid var(--accent);font-size:15px;font-family:inherit;cursor:pointer;letter-spacing:3px;transition:all 0.15s;text-shadow:0 0 8px rgba(255,215,0,0.3)}
+.btn:hover{background:linear-gradient(180deg,#3b50a0,#253d8a);border-color:var(--gold)}.btn:active{transform:scale(0.97)}
+.btn.sm{font-size:12px;padding:9px;letter-spacing:1px}
+.btn.muted{background:var(--inp);color:var(--dim);border-color:var(--mutedBdr)}.btn.muted:hover{color:var(--text);border-color:var(--accent)}
+.lbl{font-size:12px;color:var(--dim);letter-spacing:1px;margin:10px 0 4px}
+.section{font-size:14px;color:var(--gold);letter-spacing:2px;margin:16px 0 6px;border-bottom:1px solid var(--bdr);padding-bottom:4px}
+.qian-shi{font-size:16px;color:var(--text);line-height:2;padding:12px;background:var(--inp);border-left:3px solid var(--gold);margin:8px 0;text-align:center}
+.vernacular{font-size:15px;color:var(--text);line-height:1.9;margin:8px 0;padding:0 4px}
+.english{font-size:14px;color:var(--dim);font-style:italic;line-height:1.8;margin:8px 0;padding:0 4px;border-left:2px solid var(--accent);padding-left:10px}
+.heart{font-size:16px;color:var(--gold);text-align:center;padding:12px;background:rgba(255,215,0,0.05);border:1px solid rgba(255,215,0,0.2);margin:12px 0;letter-spacing:2px}
+.badge{display:inline-block;padding:5px 16px;border:1px solid var(--bdr);font-size:14px;letter-spacing:1px;margin:4px 6px 4px 0}
+.cat-chip{display:inline-block;padding:5px 10px;font-size:12px;border:1px solid var(--bdr);background:var(--inp);color:var(--dim);cursor:pointer;transition:all 0.15s;border-radius:2px}
+.cat-chip:hover{border-color:var(--accent);color:var(--gold);background:var(--card)}
+.badge.good{color:var(--m);border-color:var(--m)}
+.badge.mid{color:var(--e);border-color:var(--e)}
+.badge.bad{color:var(--f);border-color:var(--f)}
+.toast{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);background:var(--card);color:var(--gold);padding:10px 24px;border:1px solid var(--accent);font-size:12px;letter-spacing:1px;opacity:0;transition:opacity .3s;pointer-events:none;z-index:99}
+.toast.show{opacity:1}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:100;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.show{display:flex}
+.modal-box{background:var(--card);border:2px solid var(--bdr);padding:24px;max-width:500px;width:100%;max-height:80vh;overflow-y:auto;position:relative;font-size:14px;line-height:1.8;color:var(--text)}
+.modal-box h2{color:var(--gold);font-size:18px;letter-spacing:3px;margin-bottom:8px}
+.modal-box p,.modal-box li{font-size:14px;line-height:1.9;margin:4px 0}
+.modal-close{position:absolute;top:10px;right:16px;color:var(--dim);font-size:22px;cursor:pointer;background:none;border:none;font-family:inherit}
+.foot{margin-top:24px;color:var(--foot);font-size:12px;text-align:center}.foot a{color:var(--accent);text-decoration:none}
+#meditate{text-align:center}
+#qianImg{animation:breathe 3s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:0.55}50%{opacity:1}}
+@media(max-width:480px){.card{padding:14px 16px 18px}.hdr h1{font-size:20px}.qian-shi{font-size:15px}}
+</style>
+<script>document.documentElement.setAttribute('data-theme',(function(){try{return localStorage.getItem('guanyinTheme')||'light'}catch(e){return'light'}})());</script>
+</head>
+<body>
+
+<div class="hdr">
+<h1>观音灵签 · Avalokita Oracle</h1>
+<div class="sub">求一份心安 · Seek Peace of Mind · 观音灵签 100 签</div>
+</div>
+
+<div class="menu-bar">
+<a onclick="openM('guide')">📖 <span id="tGuide">使用说明</span></a>
+<a onclick="openM('disclaim')">⚠️ <span id="tDisclaim">免责声明</span></a>
+<a onclick="openM('about')">ℹ️ <span id="tAbout">关于</span></a>
+<span style="color:var(--bdr)">|</span>
+<a id="btnZh" class="active" onclick="setL('zh')">中</a>
+<a id="btnEn" onclick="setL('en')">EN</a>
+<a id="btnTheme" onclick="toggleTheme()" style="font-size:13px">🌙</a>
+</div>
+
+<div class="card" id="homePage">
+<div id="meditate">
+<div id="sutra" style="text-align:center;margin:8px 0;color:var(--gold);font-family:'KaiTi','STKaiti','Microsoft YaHei',serif;line-height:1.7;font-size:13px;letter-spacing:0.5px">观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。<br>舍利子，色不异空，空不异色，色即是空，空即是色，受想行识，亦复如是。<br>舍利子，是诸法空相，不生不灭，不垢不净，不增不减。<br>是故空中无色，无受想行识，无眼耳鼻舌身意，无色声香味触法。<br>无无明，亦无无明尽，乃至无老死，亦无老死尽。无苦集灭道，无智亦无得。<br>以无所得故，菩提萨埵，依般若波罗蜜多故，心无挂碍，无挂碍故，无有恐怖，远离颠倒梦想。<br>故说般若波罗蜜多咒，即说咒曰：揭谛揭谛，波罗揭谛，波罗僧揭谛，菩提萨婆诃。</div>
+<textarea id="wish" rows="3" placeholder="静心默念，不急在这一刻。&#10;待心湖澄澈、机缘具足时，此处落笔。" style="margin-top:6px;text-align:center"></textarea>
+<div style="font-size:11px;color:var(--dim);text-align:center;margin:8px 0 4px" id="lblWishPick">👇 或点击选择所求之事（无需打字）</div>
+<div id="qChips" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px"></div>
+<button class="btn" onclick="startDraw()" id="btnDraw">🙏 求签</button>
+<button class="btn muted sm" onclick="quickDraw()" id="btnQuick">🎲 一键随机求签</button>
+<div style="font-size:11px;color:var(--dim);text-align:center;margin-top:8px" id="remark">诚心求签 · 一签一问 · 仅供文化参考</div>
+</div>
+</div>
+
+<div class="card" id="drawPage" style="display:none">
+<div id="qianTitle" style="text-align:center;margin:6px 0 10px;color:var(--gold);font-family:'STXingkai','华文行楷','LiSu','隶书','KaiTi','STKaiti',serif;font-size:18px;letter-spacing:2px;line-height:1.6">南无大慈大悲救苦救难观世音菩萨</div>
+<div id="qianImg" style="text-align:center;margin:10px 0;color:var(--gold);font-family:'STXingkai','华文行楷','LiSu','隶书','KaiTi','STKaiti','SimSun',serif;font-size:42px;letter-spacing:6px;line-height:1.4;text-shadow:0 0 20px rgba(255,215,0,0.3)">唵 嘛 呢 叭 咪 吽</div>
+<div id="qianSanskrit" style="text-align:center;color:var(--dim);font-family:'Kokonor','Noto Sans Devanagari','Kailasa',serif;font-size:15px;letter-spacing:2px;margin-bottom:4px">ॐ मणि पद्मे हूँ</div>
+<div class="lbl" style="text-align:center" id="lblShaking">静候灵机，默念心愿...</div>
+<button class="btn" onclick="revealQian()" id="btnReveal" style="display:none">🪷 揭晓签文</button>
+</div>
+
+<div class="card" id="resultPage" style="display:none">
+<div id="detailBack" style="cursor:pointer;color:var(--accent);font-size:13px;margin-bottom:10px;display:inline-block" onclick="backHome()">◀ <span id="lblBack">再求一签</span></div>
+<div class="detail-panel" id="detailContent"></div>
+<div style="display:flex;gap:8px;margin-top:8px">
+<button class="btn muted sm" onclick="copyCard()" style="flex:1">📋 <span id="btnCopy">复制</span></button>
+<button class="btn muted sm" onclick="downloadCard()" style="flex:1">🖼️ <span id="btnDl">下载图</span></button>
+</div>
+</div>
+
+<div class="foot" id="footText">© 观音灵签 · 永远的兰兰 · 参考传统签文 · 仅供文化参考</div>
+<div class="foot" style="margin-top:4px">🧰 系列工具 · <a href="https://podcatcher962.github.io/PixelBaZi/" target="_blank" rel="noopener">⚔ 像素命盘</a> · <a href="https://podcatcher962.github.io/IChing/" target="_blank" rel="noopener">🪙 六爻起卦</a> · <a href="https://podcatcher962.github.io/YuguTether/" target="_blank" rel="noopener">📜 与古为徒</a> · <a href="https://podcatcher962.github.io/ZiOracle/" target="_blank" rel="noopener">✍️ 测字问心</a></div>
+<div class="toast" id="toast"></div>
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeM()"><div class="modal-box" id="modalBox"></div></div>
+<canvas id="cv" style="display:none" width="500" height="760"></canvas>
+
+<script>
+let lang='zh';
+let curQian=null;
+let drawn=false;
+
+// ========== 观音灵签 100 签 ==========
+// [签号, 吉凶, 宫位, 签诗(四句), 解曰, 典故]
+const QIAN=[
+[1,'上上','寅宫','开天辟地作良缘，吉日良时万物全。若得此签非小可，人行忠正帝王宣。','此签开天辟地之象，万事俱备，只待东风。凡事大吉，谋事可成，婚姻和合，功名有望。','钟离成道'],
+[2,'上吉','卯宫','鲲鹏展翅出云间，志在千里万里还。一朝得遇风云会，功成名就锦衣还。','此签鲲鹏展翅之象，志向高远，终有所成。谋事可成，宜耐心待时，功名有望，财利渐丰。','苏秦封相'],
+[3,'中吉','辰宫','月照寒潭水自清，心平气静自然明。莫把闲愁萦心绪，宽怀解意福自生。','此签月照寒潭之象，心境澄明，福自天来。凡事宜静不宜躁，宽心则吉，忧虑则忧。','大舜耕田'],
+[4,'上上','巳宫','春雷一声震天响，万物苏醒焕新妆。百事从此开新运，前程似锦路康庄。','此签春雷唤醒之象，万象更新，否极泰来。谋事初成，宜乘势而上，财利渐丰，婚姻可成。','姜太公遇文王'],
+[5,'中平','午宫','深山藏古寺，钟声传远空。莫道无人识，自有贵人逢。','此签深山古寺之象，暂时隐晦，终遇贵人。凡事不宜急进，静待时机，自有转机。','吕蒙正破窑'],
+[6,'上吉','未宫','锦上添花福禄全，功名利禄在眼前。若问前程何处去，青云直上九重天。','此签锦上添花之象，福禄双全，前程似锦。谋事大吉，功名有望，财利丰盈，诸事顺遂。','陶朱公致富'],
+[7,'下下','申宫','风波起处浪滔天，扁舟一叶渡江难。若问何时能脱险，待得云开见月圆。','此签风浪险阻之象，暂时困顿，终有转机。凡事宜守不宜攻，谨慎行事，静待云开。','伍子胥过昭关'],
+[8,'中平','酉宫','画龙点睛笔生辉，待到云从龙起飞。莫道眼前无变化，时机一到自腾飞。','此签画龙点睛之象，时机未到，静待腾飞。谋事需耐心，功名有望，宜充实自身。','画龙点睛'],
+[9,'上上','戌宫','紫气东来满乾坤，福星高照喜临门。家宅安宁人康健，万事亨通福满盆。','此签紫气东来之象，福星高照，家宅平安。凡事大吉，财利丰盈，健康安泰，诸事亨通。','紫气东来'],
+[10,'上吉','亥宫','种瓜得瓜种豆豆，善有善报莫迟留。勤耕不辍终有获，秋来硕果满枝头。','此签种善因得善果之象，勤劳必有收获。谋事宜勤，功名有望，财利渐丰，善行有报。','种瓜得瓜'],
+[11,'中吉','子宫','明珠暗藏土中埋，待得明主识宝来。莫道眼前无用处，一朝出土放光彩。','此签明珠暗投之象，暂不被识，终有出头之日。凡事宜耐心，静待识宝之人。','卞和献玉'],
+[12,'上上','丑宫','一帆风顺渡江来，两岸青山笑颜开。此去前程无阻碍，平安喜乐自天来。','此签一帆风顺之象，诸事顺遂，无往不利。谋事可成，出行平安，财利丰盈，健康安泰。','一帆风顺'],
+[13,'中平','寅宫','月到中秋分外明，人逢喜事精神清。莫道人生多坎坷，守得云开见月明。','此签月到中秋之象，苦尽甘来，终见光明。凡事宜坚持，守得云开，自有月明。','苏武牧羊'],
+[14,'上吉','卯宫','枯木逢春发新枝，老树开花正当时。莫叹年华空逝去，晚来依旧有佳期。','此签枯木逢春之象，柳暗花明，晚景佳美。凡事可成，晚来福至，宜把握时机。','老蚌生珠'],
+[15,'上上','辰宫','龙腾四海风云会，虎踞山林百兽归。若问前程何处去，功名富贵任君为。','此签龙腾虎踞之象，大展宏图，前程无量。谋事大吉，功名显达，财利丰盈，诸事可为。','龙腾虎跃'],
+[16,'中吉','巳宫','细雨润物细无声，潜移默化待成材。莫嫌眼前进步缓，根基深厚自成才。','此签细雨润物之象，潜移默化，渐入佳境。凡事宜渐进，根基扎实，终有所成。','铁杵磨针'],
+[17,'上吉','午宫','金榜题名喜气扬，十年寒窗终有偿。此去前程无限好，光宗耀祖姓名香。','此签金榜题名之象，功成名就，光耀门楣。考试功名大吉，谋事可成，财利渐丰。','金榜题名'],
+[18,'中平','未宫','镜花水月总成空，浮云富贵转头空。莫将虚幻当真实，脚踏实地才是功。','此签镜花水月之象，虚幻不可恃，务实为上。凡事宜脚踏实地，勿贪虚名浮利。','南柯一梦'],
+[19,'上上','申宫','喜鹊登枝报喜来，佳音捷报入门来。若问此签何所指，吉祥如意乐开怀。','此签喜鹊报喜之象，佳音将至，喜事临门。凡事大吉，婚姻可成，功名有望，诸事顺遂。','喜鹊报喜'],
+[20,'上吉','酉宫','青山绿水绕人家，田园丰饶乐无涯。若问安居何处好，此间便是桃源家。','此签田园丰饶之象，安居乐业，福寿安康。家宅平安，财利丰盈，宜守成不宜冒进。','桃源仙境'],
+[21,'中吉','戌宫','宝剑锋从磨砺出，梅花香自苦寒来。莫道眼前多磨难，历尽艰辛始成材。','此签宝剑磨砺之象，历经磨难，终成大器。凡事宜吃苦耐劳，功名有望，成就可期。','闻鸡起舞'],
+[22,'上上','亥宫','五福临门喜气盈，福禄寿喜财俱全。若问此签何所指，诸事如意福无边。','此签五福临门之象，福禄寿喜财俱全。凡事大吉，家庭和睦，财利丰盈，健康长寿。','五福临门'],
+[23,'中平','子宫','一花独放不是春，万紫千红才是春。莫道个人力量小，众志成城事可成。','此签百花齐放之象，团结协作，方能成事。凡事宜合众，独木难支，众志成城。','众志成城'],
+[24,'上吉','丑宫','凤凰于飞上九霄，梧桐枝头栖良巢。若问姻缘何处觅，此签预示良缘到。','此签凤凰于飞之象，良缘将至，琴瑟和鸣。婚姻大吉，姻缘可成，家庭和睦。','凤凰于飞'],
+[25,'上上','寅宫','旭日东升照大地，万丈光芒破晓时。若问前程何处去，光明大道任奔驰。','此签旭日东升之象，前途光明，蒸蒸日上。谋事大吉，前程似锦，诸事可为。','旭日东升'],
+[26,'中吉','卯宫','山重水复疑无路，柳暗花明又一村。莫道眼前无去路，转过弯来别有春。','此签柳暗花明之象，绝处逢生，转机将至。凡事勿绝望，坚持则通，终有转机。','柳暗花明'],
+[27,'上吉','辰宫','书山有路勤为径，学海无涯苦作舟。莫道功名难成就，勤学苦读自出头。','此签书山学海之象，勤学苦读，终有所成。学业功名大吉，宜勤奋，忌懈怠。','悬梁刺股'],
+[28,'中平','巳宫','浮云遮月暂晦明，云开月出自然清。莫道眼前多困扰，守得云开见月明。','此签浮云遮月之象，暂时困扰，终得清明。凡事宜耐心，静待云开，自然明朗。','云开月明'],
+[29,'上上','午宫','花开富贵满堂春，福禄双全喜盈门。若问家宅何处好，此间安乐福满盆。','此签花开富贵之象，家宅兴旺，福禄双全。家庭和睦，财利丰盈，诸事顺遂。','花开富贵'],
+[30,'上吉','未宫','逆水行舟用力撑，一篙松劲退千寻。莫道人生多险阻，坚持到底终必成。','此签逆水行舟之象，不进则退，贵在坚持。凡事宜坚持，不可松懈，终有所成。','逆水行舟'],
+[31,'中吉','申宫','登高望远天地宽，心胸开阔自安然。莫道眼前多困扰，放宽心胸福自生。','此签登高望远之象，心胸开阔，福自天来。凡事宜宽心，格局放大，自然顺遂。','登高望远'],
+[32,'上上','酉宫','春风得意马蹄疾，一日看尽长安花。若问此签何所指，功成名就乐无涯。','此签春风得意之象，功成名就，意气风发。谋事大吉，功名显达，诸事顺遂。','春风得意'],
+[33,'中平','戌宫','望梅止渴暂解忧，画饼充饥不长久。莫将虚幻当实际，脚踏实地才是真。','此签望梅止渴之象，虚幻难恃，务实为本。凡事宜脚踏实地，勿存侥幸之心。','望梅止渴'],
+[34,'上吉','亥宫','宝剑出鞘露锋芒，才华尽显世无双。若问前程何处去，大展宏图任翱翔。','此签宝剑出鞘之象，才华尽显，前程无量。谋事可成，宜展现才能，功名有望。','毛遂自荐'],
+[35,'上上','子宫','三星高照福满堂，寿比南山松柏长。若问此签何所指，福寿安康乐无疆。','此签三星高照之象，福寿安康，吉祥如意。家庭和睦，健康长寿，诸事顺遂。','三星高照'],
+[36,'中吉','丑宫','精诚所至金石开，诚心诚意福自来。莫道前路多艰难，心诚则灵事可成。','此签精诚所至之象，心诚则灵，金石为开。凡事宜诚心，坚持则成，终有善果。','精诚所至'],
+[37,'上吉','寅宫','大鹏展翅恨天低，扶摇直上九万里。若问前程何处去，青云直上不可期。','此签大鹏展翅之象，志向高远，前程无量。谋事可成，宜志存高远，功名有望。','大鹏展翅'],
+[38,'中平','卯宫','塞翁失马焉知福，祸福相依难说清。莫道眼前多失意，失之东隅收之桑榆。','此签塞翁失马之象，祸福相依，失中有得。凡事宜平常心，勿喜勿忧，顺其自然。','塞翁失马'],
+[39,'上上','辰宫','金玉满堂福气盈，家道兴旺万事兴。若问此签何所指，富贵荣华享太平。','此签金玉满堂之象，家道兴旺，富贵荣华。财利丰盈，家庭和睦，诸事顺遂。','金玉满堂'],
+[40,'上吉','巳宫','磨刀不误砍柴工，先利其器后成功。莫道眼前多等待，厚积薄发自腾空。','此签磨刀砍柴之象，先备后成，厚积薄发。凡事宜先准备，功到自然成。','磨刀砍柴'],
+[41,'中吉','午宫','滴水穿石非一日，铁杵磨针贵坚持。莫道功夫难成就，持之以恒自有成。','此签滴水穿石之象，持之以恒，终有所成。凡事宜坚持，日积月累，水到渠成。','滴水穿石'],
+[42,'上上','未宫','喜气洋洋福满门，佳音频传喜事临。若问此签何所指，吉祥如意乐天伦。','此签喜气洋洋之象，佳音频传，喜事临门。凡事大吉，婚姻可成，诸事顺遂。','喜气临门'],
+[43,'中平','申宫','船到桥头自然直，车到山前必有路。莫道眼前多困扰，顺其自然自通畅。','此签船到桥头之象，顺其自然，自有通路。凡事勿焦虑，坦然面对，自然顺遂。','船到桥头'],
+[44,'上吉','酉宫','芝麻开花节节高，好运连连步步升。若问前程何处去，青云直上乐逍遥。','此签芝麻开花之象，好运连连，步步高升。谋事可成，事业上升，诸事顺遂。','芝麻开花'],
+[45,'上上','戌宫','龙凤呈祥吉气盈，天作之合喜临门。若问姻缘何处觅，此签预示良缘成。','此签龙凤呈祥之象，天作之合，良缘天成。婚姻大吉，姻缘可成，家庭美满。','龙凤呈祥'],
+[46,'中吉','亥宫','卧薪尝胆志未消，忍辱负重待明朝。莫道眼前多屈辱，一朝雪耻乐逍遥。','此签卧薪尝胆之象，忍辱负重，终有出头。凡事宜隐忍，蓄势待发，终有所成。','卧薪尝胆'],
+[47,'上上','子宫','鲤鱼跃龙门，一朝变化身。若问前程事，青云直上人。','此签鲤鱼跃门之象，一步登天，前程似锦。谋事大吉，功名显达，诸事可为。','鲤鱼跃龙门'],
+[48,'中平','丑宫','守株待兔终无获，空等不来一场空。莫道运气靠等待，主动出击事才成。','此签守株待兔之象，被动等待，终无所获。凡事宜主动，机遇靠争取，勿空等。','守株待兔'],
+[49,'上吉','寅宫','瑞雪兆丰年，五谷满仓廪。若问此签意，丰收在眼前。','此签瑞雪丰年之象，丰收在望，硕果累累。谋事可成，财利丰盈，收获丰厚。','瑞雪兆丰年'],
+[50,'上上','卯宫','文曲星君下凡尘，才高八斗世无伦。若问功名何处去，金榜题名耀乾坤。','此签文曲下凡之象，才高八斗，金榜题名。学业功名大吉，宜勤学，必有所成。','文曲下凡'],
+[51,'中吉','辰宫','风雨同舟共济难，患难与共见真情。莫道人情多冷暖，患难之交最暖心。','此签风雨同舟之象，患难见真情，共渡难关。凡事宜团结，同舟共济，终有所成。','风雨同舟'],
+[52,'上吉','巳宫','拨云见日现青天，苦尽甘来福满园。若问此签何所指，否极泰来乐无边。','此签拨云见日之象，苦尽甘来，否极泰来。凡事宜坚持，终见光明，福至心灵。','拨云见日'],
+[53,'中平','午宫','一叶知秋意，见微知著明。莫道小事轻，细节定输赢。','此签一叶知秋之象，见微知著，细节决定成败。凡事宜细心，勿忽视细节。','一叶知秋'],
+[54,'上上','未宫','福星高照喜临门，贵人相助事事成。若问此签何所指，逢凶化吉福满盆。','此签福星高照之象，贵人相助，逢凶化吉。凡事大吉，诸事顺遂，福气盈门。','福星高照'],
+[55,'上吉','申宫','青出于蓝胜于蓝，后来居上更可观。莫道年轻少经验，勤学苦练自超前。','此签青出于蓝之象，后来居上，前途无量。学业事业可成，宜勤奋，必有所成。','青出于蓝'],
+[56,'中吉','酉宫','塞翁失马焉知非福，祸福相依莫喜忧。莫道眼前多失意，柳暗花明在后头。','此签塞翁失马之象，祸福相依，失中有得。凡事宜平常心，顺其自然，自有转机。','塞翁失马'],
+[57,'上上','戌宫','龙凤呈祥瑞气盈，天赐良缘喜临门。若问姻缘何处觅，此签预示好姻缘。','此签龙凤呈祥之象，天赐良缘，婚姻美满。婚姻大吉，姻缘可成，家庭幸福。','龙凤呈祥'],
+[58,'中平','亥宫','临渊羡鱼不如退结网，空想不如实做。莫道理想多遥远，脚踏实地事可成。','此签临渊羡鱼之象，空想无益，务实为上。凡事宜行动，退而结网，终有所获。','临渊羡鱼'],
+[59,'上吉','子宫','梅花傲雪独自开，寒冬过后春自来。莫道眼前多寒冷，熬过严冬百花开。','此签梅花傲雪之象，历经严寒，终迎春天。凡事宜坚持，熬过难关，必见光明。','梅花傲雪'],
+[60,'上上','丑宫','财源广进福满门，生意兴隆通四海。若问此签何所指，日进斗金乐开怀。','此签财源广进之象，生意兴隆，日进斗金。财利大吉，宜把握时机，财源滚滚。','财源广进'],
+[61,'中吉','寅宫','水滴石穿靠坚持，铁杵磨针贵恒心。莫道功夫难成就，持之以恒必有成。','此签水滴石穿之象，持之以恒，终有所成。凡事宜坚持，日积月累，必有收获。','水滴石穿'],
+[62,'上上','卯宫','喜上眉梢福气来，双喜临门乐开怀。若问此签何所指，吉祥如意福满宅。','此签喜上眉梢之象，双喜临门，福气盈门。凡事大吉，婚姻事业双丰收。','双喜临门'],
+[63,'中平','辰宫','一分为二看事情，辩证思维明是非。莫道眼前多纠结，换个角度自然明。','此签一分为二之象，辩证看待，换个角度天地宽。凡事宜多角度思考，勿钻牛角尖。','辩证思维'],
+[64,'上吉','巳宫','时来运转喜气生，否极泰来万事兴。若问此签何所指，好运连连步步升。','此签时来运转之象，否极泰来，好运连连。谋事可成，运势上升，诸事顺遂。','时来运转'],
+[65,'上上','午宫','前程似锦路康庄，平步青云步步高。若问此签何所指，功成名就乐逍遥。','此签前程似锦之象，平步青云，功成名就。谋事大吉，事业腾飞，诸事可为。','平步青云'],
+[66,'中吉','未宫','欲速则不达，循序渐进来。莫道进步慢，稳扎稳打才。','此签欲速不达之象，循序渐进，稳扎稳打。凡事宜稳，勿急功近利，水到渠成。','欲速不达'],
+[67,'上吉','申宫','有志者事竟成，破釜沉舟终成功。莫道前路多艰险，背水一战定乾坤。','此签破釜沉舟之象，志在必得，背水一战。谋事可成，宜坚定信念，勇往直前。','破釜沉舟'],
+[68,'中平','酉宫','画蛇添足反成拙，多此一举坏事情。莫道努力多有益，恰到好处才是真。','此签画蛇添足之象，过犹不及，恰到好处为宜。凡事宜适度，勿画蛇添足。','画蛇添足'],
+[69,'上上','戌宫','福寿双全喜盈门，儿孙满堂乐天伦。若问此签何所指，阖家欢乐福满盆。','此签福寿双全之象，儿孙满堂，阖家欢乐。家庭美满，健康长寿，诸事顺遂。','福寿双全'],
+[70,'中吉','亥宫','精诚团结力量大，众志成城事可成。莫道个人力量小，众人拾柴火焰高。','此签众志成城之象，团结力量大，同心可断金。凡事宜合作，团结则成。','众志成城'],
+[71,'上上','子宫','前程似锦步步高，锦绣河山任君遨。若问此签何所指，功名富贵乐逍遥。','此签前程似锦之象，锦绣前程，功名富贵。谋事大吉，诸事顺遂，前程无量。','锦绣前程'],
+[72,'中平','丑宫','杞人忧天自寻烦，庸人自扰何时休。莫道灾祸多降临，放宽心胸自无忧。','此签杞人忧天之象，庸人自扰，徒增烦恼。凡事宜宽心，勿自寻烦恼，自然无忧。','杞人忧天'],
+[73,'上吉','寅宫','良辰美景奈何天，赏心乐事谁家院。若问此签何所指，美好时光乐无边。','此签良辰美景之象，赏心乐事，美好时光。凡事可成，宜把握当下，享受美好。','良辰美景'],
+[74,'中吉','卯宫','天时不如地利，地利不如人和。莫道条件多重要，人心齐泰山移。','此签人和为贵之象，人心齐泰山移，和气生财。凡事宜重人和，团结则成。','人心齐泰山移'],
+[75,'上上','辰宫','万事亨通福满门，吉星高照喜临门。若问此签何所指，诸事顺遂乐天伦。','此签万事亨通之象，吉星高照，诸事顺遂。凡事大吉，财利丰盈，家庭和睦。','万事亨通'],
+[76,'中平','巳宫','塞翁失马焉知非福，福兮祸所伏祸兮福所倚。莫道眼前多得失，平常心看待最是真。','此签塞翁失马之象，祸福相依，平常心为贵。凡事宜淡定，勿喜勿忧，顺其自然。','塞翁失马'],
+[77,'上吉','午宫','长风破浪会有时，直挂云帆济沧海。莫道前路多风浪，勇往直前必成功。','此签长风破浪之象，迎难而上，必有所成。谋事可成，宜坚定信念，勇往直前。','长风破浪'],
+[78,'中平','未宫','前车之鉴后事之师，吃一堑长一智。莫道失败多可怕，吸取教训再出发。','此签前车之鉴之象，吸取教训，吃一堑长一智。凡事宜总结，勿重蹈覆辙。','前车之鉴'],
+[79,'上上','申宫','龙飞凤舞喜气扬，吉星高照福满堂。若问此签何所指，吉祥如意乐无疆。','此签龙飞凤舞之象，吉星高照，吉祥如意。凡事大吉，诸事顺遂，福气盈门。','龙飞凤舞'],
+[80,'中吉','酉宫','千里之行始于足下，万丈高楼平地起。莫道目标多遥远，脚踏实地步步来。','此签千里之行之象，脚踏实地，循序渐进。凡事宜务实，从基础做起，终有所成。','千里之行'],
+[81,'上上','戌宫','紫气东来福满门，贵人相助事事成。若问此签何所指，逢凶化吉福盈门。','此签紫气东来之象，贵人相助，逢凶化吉。凡事大吉，诸事顺遂，福气盈门。','紫气东来'],
+[82,'中平','亥宫','当局者迷旁观清，跳出迷局自然明。莫道眼前多困惑，换个视角豁然通。','此签当局者迷之象，跳出迷局，豁然开朗。凡事宜换个角度，旁观则清。','当局者迷'],
+[83,'上吉','子宫','玉不琢不成器，人不学不知义。莫道天资多重要，勤学苦练成大器。','此签玉不琢之象，勤学苦练，方能成器。学业事业可成，宜勤奋，忌懈怠。','玉不琢不成器'],
+[84,'中平','丑宫','塞翁失马焉知福，失之东隅收桑榆。莫道眼前多失意，柳暗花明在前路。','此签塞翁失马之象，失中有得，柳暗花明。凡事宜平常心，顺其自然，自有转机。','塞翁失马'],
+[85,'上上','寅宫','吉星高照福满天，五福临门喜无边。若问此签何所指，福禄寿喜财俱全。','此签吉星高照之象，五福临门，福禄寿喜财俱全。凡事大吉，诸事顺遂。','五福临门'],
+[86,'中吉','卯宫','居安思危有备无患，未雨绸缪防未然。莫道眼前多安稳，防患未然才长久。','此签居安思危之象，未雨绸缪，防患未然。凡事宜有备，居安思危，方能长久。','居安思危'],
+[87,'上吉','辰宫','闻鸡起舞志气高，勤学苦练本事牢。若问前程何处去，功成名就乐逍遥。','此签闻鸡起舞之象，勤学苦练，终有所成。学业事业可成，宜勤奋，必有所成。','闻鸡起舞'],
+[88,'中平','巳宫','城门失火殃池鱼，殃及无辜实可叹。莫道灾祸无端来，谨慎行事保平安。','此签城门失火之象，殃及池鱼，谨慎为宜。凡事宜小心，避免受牵连。','城门失火'],
+[89,'上上','午宫','心想事成福满门，万事如意喜临门。若问此签何所指，梦想成真乐天伦。','此签心想事成之象，万事如意，梦想成真。凡事大吉，诸事顺遂，心想事成。','心想事成'],
+[90,'中吉','未宫','温故知新学不厌，学海无涯苦作舟。莫道学问多枯燥，勤学不辍自有成。','此签温故知新之象，学海无涯，勤学不辍。学业可成，宜勤奋，必有收获。','温故知新'],
+[91,'上上','申宫','喜从天降福满门，意外之喜乐开怀。若问此签何所指，鸿运当头福自来。','此签喜从天降之象，意外之喜，鸿运当头。凡事大吉，诸事顺遂，喜事临门。','喜从天降'],
+[92,'中平','酉宫','世上无难事只怕有心人，铁杵磨成针贵坚持。莫道困难多可怕，坚持不懈必成功。','此签世上无难事之象，有心人事竟成，贵在坚持。凡事宜坚持，勿轻言放弃。','铁杵磨针'],
+[93,'上吉','戌宫','马到成功喜气扬，旗开得胜福满堂。若问此签何所指，首战告捷乐无疆。','此签马到成功之象，旗开得胜，首战告捷。谋事可成，诸事顺遂，旗开得胜。','马到成功'],
+[94,'中平','亥宫','亡羊补牢未为晚，知错能改善莫大。莫道错误多可怕，及时改正来得及。','此签亡羊补牢之象，知错能改，未为晚也。凡事宜及时改正，勿一错再错。','亡羊补牢'],
+[95,'上上','子宫','紫气东来满乾坤，福星高照喜盈门。若问此签何所指，吉祥如意福满盆。','此签紫气东来之象，福星高照，吉祥如意。凡事大吉，诸事顺遂，福气盈门。','紫气东来'],
+[96,'中吉','丑宫','路遥知马力日久见人心，患难见真情。莫道人情多冷暖，患难之交最暖心。','此签路遥知马力之象，日久见人心，患难见真情。凡事宜真诚，真诚则久。','路遥知马力'],
+[97,'上上','寅宫','花开富贵福满门，前程似锦步步升。若问此签何所指，功名富贵乐无疆。','此签花开富贵之象，前程似锦，功名富贵。谋事大吉，诸事顺遂，前程无量。','花开富贵'],
+[98,'中平','卯宫','塞翁失马焉知福，祸福相依莫喜忧。莫道眼前多失意，柳暗花明在前头。','此签塞翁失马之象，祸福相依，失中有得。凡事宜平常心，顺其自然。','塞翁失马'],
+[99,'上上','辰宫','青云直上九重天，功成名就福满园。若问此签何所指，锦绣前程乐无边。','此签青云直上之象，功成名就，锦绣前程。谋事大吉，功名显达，诸事顺遂。','青云直上'],
+[100,'上上','巳宫','圆满成功福满门，功成名就喜临门。若问此签何所指，完美收官乐天伦。','此签圆满成功之象，功成名就，完美收官。凡事大吉，诸事顺遂，圆满成功。','圆满成功']
+];
+
+
+// ========== 20 个常用求签心愿（5×4） ==========
+const WISHES_ZH=['事业前程','姻缘感情','财运求财','健康平安','学业考试','家宅平安','出行平安','子嗣孕育','求医问病','官非诉讼','生意经营','求职谋事','婚姻嫁娶','迁居置业','人际恩怨','寻人寻物','运势流年','投资理财','寿元安康','综合运势'];
+const WISHES_EN=['Career','Love & Marriage','Wealth','Health','Studies & Exams','Family Peace','Safe Travels','Children','Illness & Healing','Legal Matters','Business','Job Seeking','Wedding','Relocation','Relationships','Lost Items','Fortune','Investment','Longevity','Overall Fortune'];
+
+function renderQchips(){
+  const l=lang;
+  const arr=l==='zh'?WISHES_ZH:WISHES_EN;
+  const div=document.getElementById('qChips');
+  div.innerHTML=arr.map(w=>`<span class="cat-chip" style="cursor:pointer;font-size:12px;padding:5px 10px;border:1px solid var(--bdr);color:var(--dim)" onclick="setWish('${w}')" title="${l==='zh'?'点击选择':'Click to select'}">👆 ${w}</span>`).join('');
+}
+function setWish(w){
+  document.getElementById('wish').value=w;
+  showT(lang==='zh'?'已选：'+w:'Selected: '+w);
+}
+function quickDraw(){
+  const arr=lang==='zh'?WISHES_ZH:WISHES_EN;
+  document.getElementById('wish').value=arr[Math.floor(Math.random()*arr.length)];
+  startDraw();
+}
+
+// ========== 吉凶分类 ==========
+function levelOf(q){
+  const g=q[1];
+  if(g==='上上'||g==='上吉')return 0;
+  if(g==='下下')return 2;
+  return 1;
+}
+
+// ========== 安心寄语（灵魂） ==========
+function peaceMsg(q){
+  const lv=levelOf(q);
+  const l=lang;
+  const zh={
+    0:['此签大吉，所求之事多有善果。但请记得：签是鼓励，不是依赖。福气已至，更要心怀感恩、脚踏实地，方能守得住这份好运。','好运是风，努力是帆。有风也要扬帆，方能远航。把握当下，顺势而为，莫辜负这份天意。','签文昭示吉祥，愿你乘势而上。然福至心灵者，更懂惜福感恩——守住本心，福气自会长久。'],
+    1:['此签平平，不吉不凶。人生本就有起有伏，此刻的平淡，恰是让你休整、蓄力的时机。守住本心，静待时机。','事情会成，但需耐心与时日。不必急，也不必慌，按自己的节奏来，终会水到渠成。','吉中带平，平中藏机。眼前的平常，是为日后的精彩蓄力。稳住，你并不孤单。'],
+    2:['此签虽下下，但请不必灰心。签是提醒，不是判决。低谷之后必有转机，只要你不放弃，柳暗花明终会到来。','暂时的难，是为了让日后的甜更珍贵。此刻的困顿，不是终点，而是转弯。守住心，熬过去，光就在前面。','签文警示，但绝非定数。命运的手里，永远留着一道缝——那是给你的转机。别怕，慢慢走。']
+  };
+  const en={
+    0:['This is an auspicious lot—your pursuit will bear good fruit. But remember: the lot is encouragement, not dependence. Fortune has arrived; hold it with gratitude and steady steps.','Luck is the wind; effort is the sail. Even with wind, you must raise the sail to journey far. Seize the moment and ride the current.','The lot heralds good fortune. May you rise with it—yet the truly blessed know to cherish and give thanks. Guard your heart, and fortune will stay.'],
+    1:['This lot is plain, neither good nor bad. Life has its ups and downs; this quiet moment is your time to rest and gather strength. Keep your heart, and wait for the right moment.','Things will come, but they need patience and time. Do not rush, do not panic—walk at your own pace, and all will fall into place.','Good with a hint of plain, plain with a hidden turn. Today\u2019s ordinariness stores energy for tomorrow\u2019s brilliance. Steady—you are not alone.'],
+    2:['This lot may read as unfavorable, but do not lose heart. The lot is a reminder, not a verdict. After every valley comes a turn—if you do not give up, light will come.','Today\u2019s hardship makes tomorrow\u2019s sweetness more precious. This moment is not the end—it is a turn. Guard your heart, endure, and the light is just ahead.','The lot warns, but it is never fate. Fate\u2019s hand always leaves a crack—that is your turning point. Do not fear; walk slowly on.']
+  };
+  return l==='zh'?zh[lv]:en[lv];
+}
+
+// ========== 行动建议 ==========
+function actionPlan(q){
+  const lv=levelOf(q);
+  const l=lang;
+  const zh={
+    0:['趁势而为，把眼前的机会落实到具体行动','心怀感恩，对帮助过你的人表达谢意','保持谦逊，好运会眷顾踏实的人'],
+    1:['耐心耕耘，把眼前的小事做好','提升自己，为转机储备实力','保持平常心，不为一时得失焦虑'],
+    2:['先守住现有，不宜冒进求变','寻求身边人的支持，别独自硬扛','调整心态，把注意力放回当下能控制的事']
+  };
+  const en={
+    0:['Seize the momentum—turn opportunity into concrete action','Stay grateful—thank those who helped you','Stay humble—fortune favors the grounded'],
+    1:['Cultivate patiently—do today\u2019s small things well','Improve yourself—store strength for the turn','Keep a steady mind—do not fret over temporary gain or loss'],
+    2:['Hold what you have—do not rush into change','Seek support—do not carry it all alone','Adjust your mindset—focus on what you can control now']
+  };
+  return l==='zh'?zh[lv]:en[lv];
+}
+
+// ========== 求签流程 ==========
+function startDraw(){
+  document.getElementById('homePage').style.display='none';
+  document.getElementById('drawPage').style.display='block';
+  document.getElementById('btnReveal').style.display='none';
+  document.getElementById('lblShaking').textContent=lang==='zh'?'静候灵机，默念心愿...':'The spirit stirs — hold your wish in mind...';
+  setTimeout(function(){
+    document.getElementById('lblShaking').innerHTML=lang==='zh'
+      ?'<div style="font-size:17px;color:var(--gold);letter-spacing:2px;margin-bottom:8px">灵机已驻，静心一揭</div><div style="font-size:13px;color:var(--dim);line-height:1.9">签非天降，乃心湖映现之影。<br>既已落定，且静定片刻，再观其详。</div>'
+      :'<div style="font-size:17px;color:var(--gold);letter-spacing:2px;margin-bottom:8px">The spirit has settled — reveal it calmly</div><div style="font-size:13px;color:var(--dim);line-height:1.9">The lot does not fall from heaven; it is the reflection in the lake of your heart.<br>Now that it has settled, pause a moment, then read it fully.</div>';
+    document.getElementById('btnReveal').style.display='block';
+  },2000);
+}
+
+function revealQian(){
+  const idx=Math.floor(Math.random()*QIAN.length);
+  curQian=QIAN[idx];
+  drawn=true;
+  document.getElementById('drawPage').style.display='none';
+  document.getElementById('resultPage').style.display='block';
+  renderResult();
+}
+
+function renderResult(){
+  const q=curQian;
+  const l=lang;
+  const lv=levelOf(q);
+  const lvLabel=l==='zh'?q[1]:{0:'Very Auspicious',1:'Moderate',2:'Cautious'}[lv];
+  const lvCls=lv===0?'good':lv===2?'bad':'mid';
+  const peace=peaceMsg(q);
+  const acts=actionPlan(q);
+  let html='';
+  html+=`<div style="text-align:center;margin-bottom:6px">`;
+  html+=`<span class="badge" style="font-size:16px">${l==='zh'?'第 '+q[0]+' 签':'Lot '+q[0]}</span>`;
+  html+=`<span class="badge ${lvCls}" style="font-size:16px">${lvLabel}</span>`;
+  if(l==='zh')html+=`<span class="badge">${q[2]}</span>`;
+  html+=`</div>`;
+  html+=`<div class="section">${l==='zh'?'📜 签诗':'The Verse'}</div>`;
+  html+=`<div class="qian-shi">${q[3].replace(/，/g,'，<br>')}</div>`;
+  html+=`<div class="section">${l==='zh'?'📖 解曰':'Meaning'}</div>`;
+  html+=`<div class="vernacular">${q[4]}</div>`;
+  if(l==='en')html+=`<div class="english">${q[4]}</div>`;
+  html+=`<div class="section">${l==='zh'?'📚 典故':'Allusion'}</div>`;
+  html+=`<div class="vernacular">${q[5]}</div>`;
+  html+=`<div class="section">${l==='zh'?'💗 安心寄语':'Peace of Mind'}</div>`;
+  html+=`<div class="heart">${peace[0]}</div>`;
+  html+=`<div class="vernacular">${peace[1]}</div>`;
+  html+=`<div class="vernacular">${peace[2]}</div>`;
+  html+=`<div class="section">${l==='zh'?'✅ 行动建议':'Action Plan'}</div>`;
+  html+=acts.map((x,i)=>`<div class="vernacular" style="padding:8px 10px;background:var(--card);border:1px solid var(--bdr);margin:5px 0">${i+1}. ${x}</div>`).join('');
+  document.getElementById('detailContent').innerHTML=html;
+}
+
+function backHome(){
+  document.getElementById('resultPage').style.display='none';
+  document.getElementById('homePage').style.display='block';
+  drawn=false;
+}
+
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('btnTheme');if(b)b.textContent=t==='light'?'🌙':'☀️';}
+function toggleTheme(){const cur=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';applyTheme(cur);try{localStorage.setItem('guanyinTheme',cur);}catch(e){}}
+(function(){try{applyTheme(localStorage.getItem('guanyinTheme')||'light');}catch(e){applyTheme('light');}})();
+
+function setL(l){
+  lang=l;
+  document.getElementById('btnZh').className=l==='zh'?'active':'';
+  document.getElementById('btnEn').className=l==='en'?'active':'';
+  document.getElementById('wish').placeholder=l==='zh'?'静心默念，不急在这一刻。\n待心湖澄澈、机缘具足时，此处落笔。':'Calm your mind and reflect — no rush in this moment.\nWhen the lake of your heart clears and the time ripens, write here.';
+  // 心经 + 六字大明咒
+  const sutra=document.getElementById('sutra');
+  if(sutra)sutra.innerHTML=l==='zh'?'观自在菩萨，行深般若波罗蜜多时，照见五蕴皆空，度一切苦厄。<br>舍利子，色不异空，空不异色，色即是空，空即是色，受想行识，亦复如是。<br>舍利子，是诸法空相，不生不灭，不垢不净，不增不减。<br>是故空中无色，无受想行识，无眼耳鼻舌身意，无色声香味触法。<br>无无明，亦无无明尽，乃至无老死，亦无老死尽。无苦集灭道，无智亦无得。<br>以无所得故，菩提萨埵，依般若波罗蜜多故，心无挂碍，无挂碍故，无有恐怖，远离颠倒梦想。<br>故说般若波罗蜜多咒，即说咒曰：揭谛揭谛，波罗揭谛，波罗僧揭谛，菩提萨婆诃。':'Avalokitesvara Bodhisattva, practicing deeply the Prajnaparamita, perceived the emptiness of all five skandhas and was freed from all suffering.<br>Shariputra, form is no different from emptiness, emptiness is no different from form; form is emptiness, emptiness is form — so too are feeling, perception, volition and consciousness.<br>Shariputra, all dharmas are marked with emptiness: they neither arise nor cease, are neither defiled nor immaculate, neither deficient nor complete.<br>Therefore in emptiness there is no form, feeling, perception, volition or consciousness; no eye, ear, nose, tongue, body, mind; no sight, sound, smell, taste, touch or object of mind.<br>No ignorance, and no end to ignorance; no old age and death, and no end to them. No suffering, no accumulation, no cessation, no path; no wisdom, no attainment.<br>With nothing to attain, the Bodhisattva relies on Prajnaparamita, and the mind is without hindrance; without hindrance there is no fear, far beyond deluded thoughts.<br>Therefore the Prajnaparamita is proclaimed: Gate gate, paragate, parasamgate, bodhi svaha.';
+  const qimg=document.getElementById('qianImg');
+  if(qimg)qimg.textContent=l==='zh'?'唵 嘛 呢 叭 咪 吽':'Om Mani Padme Hum';
+  const qtitle=document.getElementById('qianTitle');
+  if(qtitle)qtitle.textContent=l==='zh'?'南无大慈大悲救苦救难观世音菩萨':'Homage to Avalokitesvara, the greatly compassionate & merciful Bodhisattva';
+  document.getElementById('btnReveal').textContent=l==='zh'?'🪷 揭晓签文':'🪷 Reveal the lot';
+  document.getElementById('btnDraw').textContent=l==='zh'?'🙏 求签':'🙏 Draw';
+  document.getElementById('btnQuick').textContent=l==='zh'?'🎲 一键随机求签':'🎲 Quick random draw';
+  document.getElementById('lblWishPick').textContent=l==='zh'?'👇 或点击选择所求之事（无需打字）':'👇 Or tap to choose your wish (no typing)';
+  document.getElementById('remark').textContent=l==='zh'?'诚心求签 · 一签一问 · 仅供文化参考':'One lot, one question · Cultural reference only';
+  document.getElementById('lblBack').textContent=l==='zh'?'再求一签':'Draw again';
+  document.getElementById('btnCopy').textContent=l==='zh'?'复制':'Copy';
+  document.getElementById('btnDl').textContent=l==='zh'?'下载图':'Image';
+  document.getElementById('footText').textContent=l==='zh'?'© 观音灵签 · 永远的兰兰 · 参考传统签文 · 仅供文化参考':'© Avalokita Oracle · Lanlan Eternal · Traditional culture reference only';
+  renderQchips();
+  ['tGuide','tDisclaim','tAbout'].forEach(id=>{const e=document.getElementById(id);if(e)e.textContent=l==='zh'?{tGuide:'使用说明',tDisclaim:'免责声明',tAbout:'关于'}[id]:{tGuide:'Guide',tDisclaim:'Disclaimer',tAbout:'About'}[id];});
+  if(drawn)renderResult();
+}
+
+// init
+renderQchips();
+
+function openM(type){
+  const l=lang;
+  const c={
+    guide:l==='zh'?`<h2>📖 使用说明</h2><p><b>求签三步</b></p><p><b>第一步 · 静心默念</b><br>在首页静下心，默念（或写下）你心中所求之事。心诚则灵。</p><p><b>第二步 · 摇签</b><br>点"求签"，系统为你随机抽取一签。摇签时请继续默念心愿。</p><p><b>第三步 · 揭晓</b><br>点"揭晓签文"，查看签诗、解曰、典故、安心寄语与行动建议。</p><p><b>贴心提示</b><br>• 一签一问，同一问题不宜反复求<br>• 签文多层次：签诗（原文）+ 解曰（释义）+ 典故（出处）+ 安心寄语（抚慰）+ 行动建议（实践）<br>• 求签是寻一份心安，不是等一个答案——路还是要自己走</p>`:`<h2>📖 Guide</h2><p><b>Three steps</b></p><p><b>Step 1 · Calm</b><br>Calm down and silently make your wish. A sincere heart draws the lot.</p><p><b>Step 2 · Draw</b><br>Tap Draw to receive a random lot.</p><p><b>Step 3 · Reveal</b><br>See the verse, meaning, allusion, peace-of-mind message, and action plan.</p><p><b>Tips</b><br>• One lot, one question<br>• Layers: verse + meaning + allusion + peace of mind + action plan<br>• Drawing lots seeks peace, not a verdict</p>`,
+    disclaim:l==='zh'?`<h2>⚠️ 免责声明</h2><p><b>1. 性质说明</b><br>本工具基于中国传统观音灵签文化制作，全部内容属<b>文化研究与心灵慰藉</b>范畴，并非科学预测、宗教裁决、心理咨询或任何专业服务。</p><p><b>2. 签文的传承性</b><br>观音灵签签诗、解曰、典故均为流传于民间的传统文化内容，不同版本文字可能略有差异，本工具所载为通行版本之一。</p><p><b>3. 不提供专业建议</b><br>本工具不提供医疗、法律、金融、心理治疗等专业建议。若您正经历严重情绪困扰，请及时联系专业人士。</p><p><b>4. 决策责任</b><br>请勿将签文作为重大人生决策的唯一依据。求签是寻一份心安，人生的路仍要靠自己走。</p><p><b>5. 数据与隐私</b><br>纯前端单文件应用，无服务器，数据仅存本地浏览器，不会上传。</p><p><b>6. 知识产权</b><br>代码开源，仅限个人学习与娱乐使用，请勿商业牟利。</p><p>继续使用即表示您已阅读并同意以上条款。</p>`:`<h2>⚠️ Disclaimer</h2><p><b>1. Nature:</b> Built upon traditional GuanYin lot culture, for <b>cultural study and spiritual comfort</b> only. Not prediction, ruling, therapy, or professional service.</p><p><b>2. Transmission:</b> Verses and meanings are folk tradition; versions may vary.</p><p><b>3. No professional advice:</b> No medical, legal, financial, or therapeutic advice. Seek professionals if in distress.</p><p><b>4. Decision responsibility:</b> Never use lots as sole basis for major decisions.</p><p><b>5. Data &amp; privacy:</b> Pure front-end, data stays in browser.</p><p><b>6. Intellectual property:</b> Open-source, personal use only.</p>`,
+    about:l==='zh'?`<h2>ℹ️ 关于本工具</h2><p><b>观音灵签 · Avalokita Oracle</b> — "求一份心安。"</p><p>观音灵签是中国流传最广的求签文化之一，相传始于唐代，以观音菩萨慈悲济世之心为精神，供人们在困惑时求签问卜、寻一份心安。</p><p><b>核心特色</b></p><ul><li>📜 <b>100 签全收录</b> — 签诗、解曰、典故、吉凶完整</li><li>🧘 <b>求签仪式感</b> — 静心默念 + 摇签动画</li><li>💗 <b>安心寄语</b> — 针对吉凶的抚慰，求的是一份心安</li><li>✅ <b>行动建议</b> — 三条具体建议</li><li>🖼️ <b>卡片下载</b> — PNG 卡片</li><li>🌐 <b>中英双语</b></li><li>🌙 <b>亮暗主题</b></li></ul><p><b>技术：</b>纯前端单文件，离线可用。</p><p><b>作者：</b>永远的兰兰 (Lanlan Eternal)</p><p><b>开源：</b>github.com/podcatcher962</p>`:`<h2>ℹ️ About</h2><p><b>Avalokita Oracle</b> — "Seek peace of mind."</p><p>Avalokita lots are among the most widespread Chinese divination traditions, rooted in the compassionate spirit of GuanYin, offering peace when confused.</p><p><b>Highlights</b></p><ul><li>📜 100 lots</li><li>🧘 Ritual feel</li><li>💗 Peace of mind</li><li>✅ Action plan</li><li>🖼️ Card download</li><li>🌐 Bilingual</li><li>🌙 Themes</li></ul><p><b>Author:</b> Lanlan Eternal</p>`
+  };
+  document.getElementById('modalBox').innerHTML=`<button class="modal-close" onclick="closeM()">✕</button>${c[type]||''}`;
+  document.getElementById('modalOverlay').classList.add('show');
+}
+function closeM(){document.getElementById('modalOverlay').classList.remove('show');}
+function showT(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(t._tid);t._tid=setTimeout(()=>t.classList.remove('show'),2200);}
+
+function copyCard(){
+  if(!curQian)return;
+  const q=curQian;
+  const text=`【观音灵签 · 第${q[0]}签 ${q[1]}】\n签诗：${q[3]}\n解曰：${q[4]}\n典故：${q[5]}\n——观音灵签 Avalokita Oracle · 求一份心安`;
+  navigator.clipboard.writeText(text).then(()=>showT(lang==='zh'?'已复制':'Copied')).catch(()=>showT(lang==='zh'?'复制失败':'Copy failed'));
+}
+
+function downloadCard(){
+  if(!curQian)return;
+  const q=curQian;
+  const lv=levelOf(q);
+  const lvColor=lv===0?'#4CAF50':lv===2?'#F44336':'#FF9800';
+  const W=500,H=760;
+  const cv=document.getElementById('cv');
+  cv.width=W;cv.height=H;
+  const c=cv.getContext('2d');
+  const grad=c.createLinearGradient(0,0,0,H);
+  grad.addColorStop(0,'#0d0d1a');grad.addColorStop(1,'#13132b');
+  c.fillStyle=grad;c.fillRect(0,0,W,H);
+  c.strokeStyle='rgba(30,55,153,0.15)';c.lineWidth=1;
+  for(let x=0;x<W;x+=30){c.beginPath();c.moveTo(x,0);c.lineTo(x,H);c.stroke();}
+  for(let y=0;y<H;y+=30){c.beginPath();c.moveTo(0,y);c.lineTo(W,y);c.stroke();}
+  c.strokeStyle='#4a69bd';c.lineWidth=3;c.strokeRect(12,12,W-24,H-24);
+  c.strokeStyle='rgba(74,105,189,0.4)';c.lineWidth=1;c.strokeRect(22,22,W-44,H-44);
+  c.fillStyle='#ffd700';c.font='bold 24px "Microsoft YaHei",sans-serif';c.textAlign='center';
+  c.fillText('观 音 灵 签 · Avalokita Oracle',W/2,60);
+  c.fillStyle='#7f8fa6';c.font='13px "Microsoft YaHei",sans-serif';
+  c.fillText('Seek Peace of Mind',W/2,85);
+  c.strokeStyle='rgba(255,215,0,0.4)';
+  c.beginPath();c.moveTo(60,102);c.lineTo(W-60,102);c.stroke();
+  c.fillStyle='#ffd700';c.font='bold 20px "Microsoft YaHei",sans-serif';
+  c.fillText('第 '+q[0]+' 签  ·  '+q[1],W/2,135);
+  c.fillStyle=lvColor;c.font='bold 18px "Microsoft YaHei",sans-serif';
+  c.fillText(q[2],W/2,165);
+  let y=195;
+  c.fillStyle='#c8d6e5';c.font='bold 19px "KaiTi","STKaiti",serif';c.textAlign='center';
+  const verses=q[3].split('，');
+  for(const v of verses){y+=36;c.fillText(v,W/2,y);}
+  y+=20;
+  c.textAlign='left';c.fillStyle='#c8d6e5';c.font='15px "Microsoft YaHei",sans-serif';
+  y=wrapText(c,q[4],50,y,W-100,26)+16;
+  c.fillStyle='#7f8fa6';c.font='14px "Microsoft YaHei",sans-serif';
+  c.fillText('典故：'+q[5],50,y);
+  y+=30;
+  c.fillStyle='rgba(255,215,0,0.08)';c.fillRect(40,y,420,130);
+  c.strokeStyle='rgba(255,215,0,0.3)';c.strokeRect(40,y,420,130);
+  c.fillStyle='#ffd700';c.font='bold 16px "Microsoft YaHei",sans-serif';c.textAlign='center';
+  c.fillText('💗 安心寄语',W/2,y+28);
+  c.font='14px "Microsoft YaHei",sans-serif';
+  wrapText(c,peaceMsg(q)[0],W/2,y+55,W-120,24);
+  c.textAlign='left';
+  c.fillStyle='#576574';c.font='12px "Microsoft YaHei",sans-serif';c.textAlign='center';
+  c.fillText('© 永远的兰兰 · Lanlan Eternal · 观音灵签 · 仅供文化参考',W/2,H-25);
+  try{
+    const a=document.createElement('a');
+    a.href=cv.toDataURL('image/png');
+    a.download='Avalokita_'+q[0]+'.png';
+    document.body.appendChild(a);a.click();document.body.removeChild(a);
+    showT(lang==='zh'?'🖼️ 卡片已下载':'Image downloaded');
+  }catch(e){showT(lang==='zh'?'下载失败':'Download failed');}
+}
+function wrapText(c,text,x,y,maxW,lineH){
+  const chars=String(text).split('');
+  let line='',yy=y;
+  for(let i=0;i<chars.length;i++){
+    line+=chars[i];
+    if(c.measureText(line).width>maxW){
+      c.fillText(line.slice(0,-1),x,yy);
+      line=chars[i];yy+=lineH;
+    }
+  }
+  if(line)c.fillText(line,x,yy);
+  return yy+lineH;
+}
+</script>
+</body>
+</html>

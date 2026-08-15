@@ -73,8 +73,8 @@ input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 8px rgba(74
 <span style="color:var(--bdr)">|</span>
 <a id="btnZh" class="active" onclick="setL('zh')">中</a>
 <a id="btnEn" onclick="setL('en')">EN</a>
-<a id="btnTheme" onclick="toggleTheme()" style="font-size:13px">🌙</a>
-<a id="btnSound" onclick="toggleSound()" title="背景音乐">♪</a>
+<a id="btnTheme" onclick="toggleTheme()" style="font-size:13px"><span id="themeIcon">🌙</span> <span id="tTheme">主题</span></a>
+<a id="btnSound" onclick="toggleSound()" title="背景音乐">♪ <span id="tSound">音乐</span></a>
 </div>
 
 <div class="card" id="homePage">
@@ -344,7 +344,7 @@ function backHome(){
   drawn=false;
 }
 
-function applyTheme(t){document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('btnTheme');if(b)b.textContent=t==='light'?'🌙':'☀️';}
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('themeIcon');if(b)b.textContent=t==='light'?'🌙':'☀️';}
 function toggleTheme(){const cur=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';applyTheme(cur);try{localStorage.setItem('guanyinTheme',cur);}catch(e){}}
 (function(){try{applyTheme(localStorage.getItem('guanyinTheme')||'light');}catch(e){applyTheme('light');}})();
 
@@ -372,6 +372,8 @@ function setL(l){
   lang=l;
   document.getElementById('btnZh').className=l==='zh'?'active':'';
   document.getElementById('btnEn').className=l==='en'?'active':'';
+  document.getElementById('tTheme').textContent=l==='zh'?'主题':'Theme';
+  document.getElementById('tSound').textContent=l==='zh'?'音乐':'Music';
   document.getElementById('wish').placeholder=l==='zh'?'静心默念，不急在这一刻。\n待心湖澄澈、机缘具足时，此处落笔。':'Calm your mind and reflect — no rush in this moment.\nWhen the lake of your heart clears and the time ripens, write here.';
   // 心经 + 六字大明咒
   const sutra=document.getElementById('sutra');

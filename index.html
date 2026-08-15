@@ -59,6 +59,7 @@ input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 8px rgba(74
 <script>document.documentElement.setAttribute('data-theme',(function(){try{return localStorage.getItem('guanyinTheme')||'light'}catch(e){return'light'}})());</script>
 </head>
 <body>
+<audio id="bgm" loop src="audio/ommani.mp3"></audio>
 
 <div class="hdr">
 <h1>观音灵签 · Avalokita Oracle</h1>
@@ -73,6 +74,7 @@ input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 8px rgba(74
 <a id="btnZh" class="active" onclick="setL('zh')">中</a>
 <a id="btnEn" onclick="setL('en')">EN</a>
 <a id="btnTheme" onclick="toggleTheme()" style="font-size:13px">🌙</a>
+<a id="btnSound" onclick="toggleSound()" title="背景音乐">♪</a>
 </div>
 
 <div class="card" id="homePage">
@@ -105,7 +107,7 @@ input:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 8px rgba(74
 </div>
 
 <div class="foot" id="footText">© 观音灵签 · 永远的兰兰 · 参考传统签文 · 仅供文化参考</div>
-<div class="foot" style="margin-top:4px">🧰 系列工具 · <a href="https://podcatcher962.github.io/PixelBaZi/" target="_blank" rel="noopener">⚔ 像素命盘</a> · <a href="https://podcatcher962.github.io/IChing/" target="_blank" rel="noopener">🪙 六爻起卦</a> · <a href="https://podcatcher962.github.io/YuguTether/" target="_blank" rel="noopener">📜 与古为徒</a> · <a href="https://podcatcher962.github.io/ZiOracle/" target="_blank" rel="noopener">✍️ 测字问心</a></div>
+<div class="foot" style="margin-top:4px">🧰 系列工具 · <a href="https://podcatcher962.github.io/PixelBaZi/" target="_blank" rel="noopener">⚔ 像素命盘</a> · <a href="https://podcatcher962.github.io/IChing/" target="_blank" rel="noopener">🪙 六爻起卦</a> · <a href="https://podcatcher962.github.io/YuguTether/" target="_blank" rel="noopener">📜 与古为徒</a> · <a href="https://podcatcher962.github.io/ZiOracle/" target="_blank" rel="noopener">✍️ 测字问心</a> · <a href="https://podcatcher962.github.io/PetalVerse/" target="_blank" rel="noopener">PetalVerse</a> · <a href="https://podcatcher962.github.io/XianReverie/" target="_blank" rel="noopener">🌙 闲坐 XianReverie</a></div>
 <div class="toast" id="toast"></div>
 <div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeM()"><div class="modal-box" id="modalBox"></div></div>
 <canvas id="cv" style="display:none" width="500" height="760"></canvas>
@@ -345,6 +347,26 @@ function backHome(){
 function applyTheme(t){document.documentElement.setAttribute('data-theme',t);const b=document.getElementById('btnTheme');if(b)b.textContent=t==='light'?'🌙':'☀️';}
 function toggleTheme(){const cur=document.documentElement.getAttribute('data-theme')==='light'?'dark':'light';applyTheme(cur);try{localStorage.setItem('guanyinTheme',cur);}catch(e){}}
 (function(){try{applyTheme(localStorage.getItem('guanyinTheme')||'light');}catch(e){applyTheme('light');}})();
+
+// 背景音乐：六字大明咒，默认播放
+let soundOn = true;
+function toggleSound(){
+  soundOn = !soundOn;
+  const bgm = document.getElementById('bgm');
+  if(soundOn){ bgm.play().catch(()=>{}); }
+  else { bgm.pause(); }
+  document.getElementById('btnSound').className = soundOn ? 'active' : '';
+}
+(function(){
+  const bgm = document.getElementById('bgm');
+  if(!bgm) return;
+  bgm.volume = 0.35;
+  bgm.play().catch(()=>{});
+  document.getElementById('btnSound').className = 'active';
+  document.addEventListener('pointerdown', function(){
+    if(soundOn && bgm.paused) bgm.play().catch(()=>{});
+  });
+})();
 
 function setL(l){
   lang=l;

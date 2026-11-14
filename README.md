@@ -33,7 +33,7 @@
 
 请勿将签文作为重大人生决策（婚姻、投资、职业、医疗）的唯一依据。求签是寻一份心安、一份鼓励，人生的路仍要靠自己走。
 
-本工具为纯前端单文件应用，无服务器、无第三方跟踪，所有数据仅在本地浏览器保存，不会上传。代码以开源形式发布，仅限个人学习与娱乐使用，请勿用于商业牟利。
+本工具为纯前端单文件应用，无服务器、无第三方跟踪，所有数据仅在本地浏览器保存，不会上传。代码以 MIT 许可发布（见 LICENSE）；签诗、解曰与典故整理自民间通行版本，释义与页面编排版权归作者，转载注明出处。
 
 ---
 
@@ -64,7 +64,7 @@ Verses, meanings, and allusions are folk tradition; versions may vary slightly. 
 
 Never use lots as the sole basis for major decisions (marriage, investment, career, medical). Drawing lots seeks peace and encouragement—your path is still yours to walk.
 
-Pure front-end single-file app. No server, no tracking. Data stays in your browser only. Open-sourced for personal study and entertainment; commercial misuse is prohibited.
+Pure front-end single-file app. No server, no tracking. Data stays in your browser only. Code released under the MIT License (see LICENSE); the verse texts are folk tradition and the editorial notes are the author's copyright — credit the source when republishing.
 
 ---
 
